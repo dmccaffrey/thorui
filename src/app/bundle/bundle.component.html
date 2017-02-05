@@ -1,0 +1,68 @@
+<div class="card">
+    <div class="card-header">
+        Deployment Progress
+    </div>
+    <div class="card-block">
+        <div class="progress loop"><progress></progress></div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-5">
+        <div class="card">
+            <div class="card-header">
+                State Diagram
+            </div>
+            <div class="card-block">
+                <thor-diagram></thor-diagram>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-7">
+        <div class="card">
+            <div class="card-header">
+                SDDC FSM
+            </div>
+            <div class="card-block">
+                <span class="label label-info">Total: ###</span>
+                <span class="label label-success">Completed: ###</span>
+                <span class="label label-warning">Canceled: ###</span>
+                <span class="label label-danger">Failed: ###</span>
+                <clr-datagrid>
+                    <clr-dg-column>SDDC FSM ID</clr-dg-column>
+                    <clr-dg-column>Current State</clr-dg-column>
+                    <clr-dg-column>Creation date</clr-dg-column>
+
+                    <clr-dg-placeholder>No SDDC FSM available!</clr-dg-placeholder>
+
+                    <clr-dg-row *clrDgItems="let sddc of sddcFsms" (click)="sddcClick($event)">
+                        <clr-dg-cell>{{sddc.id}}</clr-dg-cell>
+                        <clr-dg-cell>{{sddc.state}}</clr-dg-cell>
+                        <clr-dg-cell>{{sddc.creation | date}}</clr-dg-cell>
+                    </clr-dg-row>
+
+                    <clr-dg-footer>
+                        {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}}
+                        of {{pagination.totalItems}} SDDC
+                        <clr-dg-pagination #pagination [clrDgPageSize]="10"></clr-dg-pagination>
+                    </clr-dg-footer>
+                </clr-datagrid>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                FSM Context
+            </div>
+            <div class="card-block">
+                <thor-context></thor-context>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                Send Event
+            </div>
+            <div class="card-block">
+                <thor-send-event></thor-send-event>
+            </div>
+        </div>
+    </div>
+</div>

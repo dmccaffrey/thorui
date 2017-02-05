@@ -5,14 +5,22 @@ import { HttpModule } from '@angular/http';
 import { ClarityModule } from 'clarity-angular';
 import { AppComponent } from './app.component';
 import { ROUTING } from "./app.routing";
-import { HomeComponent } from "./home/home.component";
-import { AboutComponent } from "./about/about.component";
+import { SystemComponent } from "./system/system.component";
+import { DeployComponent } from "./deploy/deploy.component";
+import { BundleComponent } from "./bundle/bundle.component";
+import { DiagramComponent } from "./diagram/diagram.component";
+import { ContextComponent } from "./context/context.component";
+import { SendEventComponent } from "./sendEvent/sendEvent.component";
 
 @NgModule({
     declarations: [
         AppComponent,
-        AboutComponent,
-        HomeComponent
+        SystemComponent,
+        DeployComponent,
+        BundleComponent,
+        DiagramComponent,
+        ContextComponent,
+        SendEventComponent
     ],
     imports: [
         BrowserModule,

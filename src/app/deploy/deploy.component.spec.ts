@@ -5,7 +5,7 @@
  */
 import { async, TestBed, ComponentFixture } from "@angular/core/testing";
 import { ClarityModule } from 'clarity-angular';
-import { HomeComponent } from './home.component';
+import { DeployComponent } from './deploy.component';
 
 
 describe('HomeComponent', () => {
@@ -18,14 +18,14 @@ describe('HomeComponent', () => {
     beforeEach(() => {
         TestBed.configureTestingModule({
             declarations: [
-                HomeComponent
+                DeployComponent
             ],
             imports: [
                 ClarityModule.forRoot()
             ]
         });
 
-        fixture = TestBed.createComponent(HomeComponent);
+        fixture = TestBed.createComponent(DeployComponent);
         fixture.detectChanges();
         compiled = fixture.nativeElement;
 

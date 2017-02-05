@@ -1,0 +1,89 @@
+<div class="card">
+    <div class="card-header">
+        Select one Bundle
+    </div>
+    <div class="card-block">
+        <clr-datagrid [(clrDgSelected)]="selectedBundle">
+            <clr-dg-column>Bundle ID</clr-dg-column>
+            <clr-dg-column>Description</clr-dg-column>
+            <clr-dg-column>Creation date</clr-dg-column>
+
+            <clr-dg-placeholder>No bundles available!</clr-dg-placeholder>
+
+            <clr-dg-row *clrDgItems="let bundle of bundles" [clrDgItem]="bundle">
+                <clr-dg-cell>{{bundle.id}}</clr-dg-cell>
+                <clr-dg-cell>{{bundle.description}}</clr-dg-cell>
+                <clr-dg-cell>{{bundle.creation | date}}</clr-dg-cell>
+            </clr-dg-row>
+
+            <clr-dg-footer>
+                {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}}
+                of {{pagination.totalItems}} bundles
+                <clr-dg-pagination #pagination [clrDgPageSize]="10"></clr-dg-pagination>
+            </clr-dg-footer>
+        </clr-datagrid>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        Select Multiple SDDC
+    </div>
+    <div class="card-block">
+        <clr-datagrid [(clrDgSelected)]="selectedSDDC">
+            <clr-dg-column>SDDC Id</clr-dg-column>
+            <clr-dg-column>Tennant Id</clr-dg-column>
+            <clr-dg-column>Current Version</clr-dg-column>
+
+            <clr-dg-placeholder>No bundles available!</clr-dg-placeholder>
+
+            <clr-dg-row *clrDgItems="let sddc of sddcs" [clrDgItem]="sddc">
+                <clr-dg-cell>{{sddc.id}}</clr-dg-cell>
+                <clr-dg-cell>{{sddc.tennantId}}</clr-dg-cell>
+                <clr-dg-cell>{{sddc.version}}</clr-dg-cell>
+            </clr-dg-row>
+
+            <clr-dg-footer>
+                {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}}
+                of {{pagination.totalItems}} bundles
+                <clr-dg-pagination #pagination [clrDgPageSize]="10"></clr-dg-pagination>
+            </clr-dg-footer>
+        </clr-datagrid>
+    </div>
+</div>
+
+<br>
+<div class="card">
+    <div class="card-header">
+        Deployment description
+    </div>
+    <div class="card-block">
+        <div class="dashedBox">
+            <clr-icon shape="document"></clr-icon>
+            Selected bundle: <span *ngFor="let bundle of selectedBundle">{{bundle.id}}</span>
+        </div>
+        <div class="dashedBox">
+            <clr-icon shape="cluster"></clr-icon>
+            Selected SDDC: <span *ngFor="let sddc of selectedSDDC">{{sddc.id}}, </span>
+        </div>
+        <button class="btn btn-primary" (click)="open = true">Start Deployment</button>
+    </div>
+</div>
+
+<clr-modal [(clrModalOpen)]="open">
+  <h3 class="modal-title">Are you sure you want to start this deployment?</h3>
+  <div class="modal-body">
+        <div class="dashedBox">
+            <clr-icon shape="document"></clr-icon>
+            Selected bundle: <span *ngFor="let bundle of selectedBundle">{{bundle.id}}</span>
+        </div>
+        <div class="dashedBox">
+            <clr-icon shape="cluster"></clr-icon>
+            Selected SDDC: <span *ngFor="let sddc of selectedSDDC">{{sddc.id}}, </span>
+        </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline" (click)="open = false">Cancel</button>
+    <button type="button" class="btn btn-danger" (click)="open = false">Start</button>
+  </div>
+</clr-modal>

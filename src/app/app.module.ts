@@ -11,6 +11,7 @@ import { BundleComponent } from "./bundle/bundle.component";
 import { DiagramComponent } from "./diagram/diagram.component";
 import { ContextComponent } from "./context/context.component";
 import { SendEventComponent } from "./sendEvent/sendEvent.component";
+import { SddcComponent } from "./sddc/sddc.component";
 
 @NgModule({
     declarations: [
@@ -20,7 +21,8 @@ import { SendEventComponent } from "./sendEvent/sendEvent.component";
         BundleComponent,
         DiagramComponent,
         ContextComponent,
-        SendEventComponent
+        SendEventComponent,
+        SddcComponent
     ],
     imports: [
         BrowserModule,

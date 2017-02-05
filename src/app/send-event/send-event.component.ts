@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-    templateUrl: './sendEvent.component.html',
+    templateUrl: './send-event.component.html',
     selector: 'thor-send-event'
 })
 

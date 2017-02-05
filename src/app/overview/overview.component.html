@@ -1,0 +1,34 @@
+
+<div class="card">
+    <div class="card-header">
+        System Health
+    </div>
+    <div class="card-block">
+        Placeholder
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        Bundle FSM
+    </div>
+    <div class="card-block">
+        <span class="label label-info">Total: ###</span>
+        <span class="label label-success">Completed: ###</span>
+        <span class="label label-warning">Canceled: ###</span>
+        <fsm-table [fsmtype]="'bundle'"></fsm-table>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        SDDC FSM
+    </div>
+    <div class="card-block">
+        <span class="label label-info">Total: ###</span>
+        <span class="label label-success">Completed: ###</span>
+        <span class="label label-warning">Canceled: ###</span>
+        <span class="label label-danger">Failed: ###</span>
+        <fsm-table [fsmtype]="'sddc'"></fsm-table>
+    </div>
+</div>

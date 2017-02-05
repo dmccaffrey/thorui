@@ -12,11 +12,14 @@
   <nav class="sub-nav" [clr-nav-level]="1">
     <ul class="nav">
       <li class="nav-item">
-        <a class="nav-link" href="#" [routerLink]="['/system']"
-           [class.active]="router.url==='/system' || router.url==='/'">System</a>
+        <a class="nav-link" href="#" [routerLink]="['/overview']"
+           [class.active]="router.url==='/overview' || router.url==='/'">Overview</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#" [routerLink]="['/deploy']" [class.active]="router.url==='/deploy'">Deploy</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" [routerLink]="['/config']" [class.active]="router.url==='/config'">Configure</a>
       </li>
     </ul>
   </nav>

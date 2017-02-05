@@ -9,11 +9,11 @@ import { Router } from '@angular/router'
 let $ = require('jquery');
 
 @Component({
-    styleUrls: ['./system.component.scss'],
-    templateUrl: './system.component.html'
+    styleUrls: ['./overview.component.scss'],
+    templateUrl: './overview.component.html'
 })
 
-export class SystemComponent {
+export class OverviewComponent {
     bundleFsms: BundleFsm[] = [];
     sddcFsms: SddcFsm[] = [];
     router: Router;

@@ -27,25 +27,7 @@
                 <span class="label label-success">Completed: ###</span>
                 <span class="label label-warning">Canceled: ###</span>
                 <span class="label label-danger">Failed: ###</span>
-                <clr-datagrid>
-                    <clr-dg-column>SDDC FSM ID</clr-dg-column>
-                    <clr-dg-column>Current State</clr-dg-column>
-                    <clr-dg-column>Creation date</clr-dg-column>
-
-                    <clr-dg-placeholder>No SDDC FSM available!</clr-dg-placeholder>
-
-                    <clr-dg-row *clrDgItems="let sddc of sddcFsms" (click)="sddcClick($event)">
-                        <clr-dg-cell>{{sddc.id}}</clr-dg-cell>
-                        <clr-dg-cell>{{sddc.state}}</clr-dg-cell>
-                        <clr-dg-cell>{{sddc.creation | date}}</clr-dg-cell>
-                    </clr-dg-row>
-
-                    <clr-dg-footer>
-                        {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}}
-                        of {{pagination.totalItems}} SDDC
-                        <clr-dg-pagination #pagination [clrDgPageSize]="10"></clr-dg-pagination>
-                    </clr-dg-footer>
-                </clr-datagrid>
+                <fsm-table [fsmtype]="'sddc'"></fsm-table>
             </div>
         </div>
         <div class="card">

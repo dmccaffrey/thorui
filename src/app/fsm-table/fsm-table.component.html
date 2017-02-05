@@ -1,0 +1,19 @@
+<clr-datagrid>
+    <clr-dg-column>{{fsmTypeName}} FSM Id</clr-dg-column>
+    <clr-dg-column>Current State</clr-dg-column>
+    <clr-dg-column>Creation date</clr-dg-column>
+
+    <clr-dg-placeholder>No {{fsmTypeName}} FSM available!</clr-dg-placeholder>
+
+    <clr-dg-row *clrDgItems="let fsm of fsms" (click)="sddcClick($event)">
+        <clr-dg-cell>{{fsm.id}}</clr-dg-cell>
+        <clr-dg-cell>{{fsm.state}}</clr-dg-cell>
+        <clr-dg-cell>{{fsm.creation | date}}</clr-dg-cell>
+    </clr-dg-row>
+
+    <clr-dg-footer>
+        {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}}
+        of {{pagination.totalItems}} SDDC
+        <clr-dg-pagination #pagination [clrDgPageSize]="10"></clr-dg-pagination>
+    </clr-dg-footer>
+</clr-datagrid>

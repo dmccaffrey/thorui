@@ -1,0 +1,17 @@
+<div class="card">
+    <div class="card-header">
+        Global Configuration
+    </div>
+    <div class="card-block">
+        <form (ngSubmit)="onSubmit()">
+            <section class="form-block">
+                <div class="form-group">
+                    <label for="eventData">New Configuration</label>
+                    <textarea id="eventData" rows="5" [(ngModel)]="model.config" name="config"></textarea>
+                </div>
+                <button type="button" class="btn btn-outline" (click)="reloadConfig()">Reload Configuration</button>
+                <button type="submit" class="btn btn-danger">Deploy Configuration</button>
+            </section>
+        </form>
+    </div>
+</div>

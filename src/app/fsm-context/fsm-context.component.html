@@ -1,0 +1,13 @@
+<h5>Current state: <span class="label label-info">{{currentState}}</span></h5>
+<h5>History</h5>
+<clr-stack-view>
+    <clr-stack-block [clrSbExpanded]="false">
+        <clr-stack-label>Event --> State</clr-stack-label>
+        <clr-stack-block *ngFor="let pair of history">
+            <clr-stack-label>{{pair.event}}</clr-stack-label>
+            <clr-stack-content>{{pair.state}}</clr-stack-content>
+        </clr-stack-block>
+    </clr-stack-block>
+</clr-stack-view>
+<h5>Raw Context</h5>
+<pre>{{ rawContext }}</pre>

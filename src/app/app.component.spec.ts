@@ -3,10 +3,11 @@
 import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { DeployComponent } from "./deploy/deploy.component";
-import { SystemComponent } from "./system/system.component";
+import { OverviewComponent } from "./overview/overview.component";
 import { BundleComponent } from "./bundle/bundle.component";
-import { ContextComponent } from "./context/context.component";
-import { SendEventComponent } from "./sendEvent/sendEvent.component";
+import { FsmContextComponent } from "./fsm-context/fsm-context.component";
+import { SendEventComponent } from "./send-event/send-event.component";
+import { ConfigureComponent } from "./configure/configure.component";
 import { ClarityModule } from "clarity-angular";
 import { ROUTING } from "./app.routing";
 import { APP_BASE_HREF } from "@angular/common";
@@ -21,10 +22,11 @@ describe('AppComponent', () => {
             declarations: [
                 AppComponent,
                 DeployComponent,
-                SystemComponent,
+                OverviewComponent,
                 BundleComponent,
-                ContextComponent,
-                SendEventComponent
+                FsmContextComponent,
+                SendEventComponent,
+                ConfigureComponent,
             ],
             imports: [
                 ClarityModule.forRoot(),

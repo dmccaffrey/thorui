@@ -5,24 +5,29 @@ import { HttpModule } from '@angular/http';
 import { ClarityModule } from 'clarity-angular';
 import { AppComponent } from './app.component';
 import { ROUTING } from "./app.routing";
-import { SystemComponent } from "./system/system.component";
+
+import { OverviewComponent } from "./overview/overview.component";
 import { DeployComponent } from "./deploy/deploy.component";
 import { BundleComponent } from "./bundle/bundle.component";
 import { DiagramComponent } from "./diagram/diagram.component";
-import { ContextComponent } from "./context/context.component";
-import { SendEventComponent } from "./sendEvent/sendEvent.component";
+import { FsmContextComponent } from "./fsm-context/fsm-context.component";
+import { SendEventComponent } from "./send-event/send-event.component";
 import { SddcComponent } from "./sddc/sddc.component";
+import { FsmTableComponent } from "./fsm-table/fsm-table.component";
+import { ConfigureComponent } from "./configure/configure.component";
 
 @NgModule({
     declarations: [
         AppComponent,
-        SystemComponent,
+        OverviewComponent,
         DeployComponent,
         BundleComponent,
         DiagramComponent,
-        ContextComponent,
+        FsmContextComponent,
         SendEventComponent,
-        SddcComponent
+        SddcComponent,
+        FsmTableComponent,
+        ConfigureComponent
     ],
     imports: [
         BrowserModule,

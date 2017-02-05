@@ -7,17 +7,19 @@ import { ModuleWithProviders } from '@angular/core/src/metadata/ng_module';
 import { Routes, RouterModule } from '@angular/router';
 
 import { DeployComponent } from './deploy/deploy.component';
-import { SystemComponent } from './system/system.component';
+import { OverviewComponent } from './overview/overview.component';
 import { BundleComponent } from './bundle/bundle.component';
 import { SddcComponent } from './sddc/sddc.component';
+import { ConfigureComponent } from './configure/configure.component';
 
 
 export const ROUTES: Routes = [
-    {path: '', redirectTo: 'system', pathMatch: 'full'},
-    {path: 'system', component: SystemComponent},
+    {path: '', redirectTo: 'overview', pathMatch: 'full'},
+    {path: 'overview', component: OverviewComponent},
     {path: 'deploy', component: DeployComponent},
     {path: 'bundle', component: BundleComponent},
-    {path: 'sddc', component: SddcComponent}
+    {path: 'sddc', component: SddcComponent},
+    {path: 'config', component: ConfigureComponent}
 ];
 
 export const ROUTING: ModuleWithProviders = RouterModule.forRoot(ROUTES);
